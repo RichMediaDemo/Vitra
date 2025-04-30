@@ -27,8 +27,24 @@
       background: #e0e0e0;
       border-radius: 4px;
     }
+    .button-group {
+      display: flex;
+      gap: 10px;
+      margin: 20px 0;
+    }
+    .button-group button {
+      padding: 10px 20px;
+      background-color: #ffffff;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .button-group button:hover {
+      background-color: #ececec;
+    }
     .iframe-container {
-      margin: 40px auto;
+      margin: 20px auto;
       width: 970px;
       height: 250px;
       border: 1px solid #ddd;
@@ -82,6 +98,11 @@
       border-radius: 4px;
     }
   </style>
+  <script>
+    function switchIframe(src) {
+      document.getElementById('bannerFrame').src = src;
+    }
+  </script>
 </head>
 <body>
   <header>
@@ -89,8 +110,14 @@
     <p></p>
   </header>
 
+  <div class="button-group">
+    <button onclick="switchIframe('Desktop/desktop.html')">Desktop 1</button>
+    <button onclick="switchIframe('Desktop2/desktop2.html')">Desktop 2</button>
+    <button onclick="switchIframe('Desktop3/desktop3.html')">Desktop 3</button>
+  </div>
+
   <div class="iframe-container">
-    <iframe src="Desktop/desktop.html"></iframe>
+    <iframe id="bannerFrame" src="Desktop/desktop.html"></iframe>
   </div>
 
   <div class="benchmarks">
